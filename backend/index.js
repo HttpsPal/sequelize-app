@@ -9,14 +9,17 @@ const db = require("./models");
 
 ///// ROUTERS
 
+//////////
+
 db.sequelize
 	.sync()
 	.then(() => {
 		app.listen(8080, () => {
-			console.log("Server is running on port 3001");
+			console.log("Server is running on port 8080");
 		});
 	})
 	.catch((err) => {
 		console.error(err);
 		console.log(err.message);
+		console.log("Server couldn't connect to the database!");
 	});
